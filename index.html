@@ -1,13 +1,15 @@
 <style>
+/* ===== RESET ===== */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* ===== BASE ===== */
 body {
-  background: #ffe4c4; /* бежевый фон */
-  color: #4a3f35; /* тёплый тёмно-коричневый для основного текста */
+  background: #eeece8; /* серо-бежевый, больше серого */
+  color: #3f3f3f; /* графитовый текст */
   font-family: "Inter", sans-serif;
   display: flex;
   justify-content: center;
@@ -20,7 +22,7 @@ body {
   padding-bottom: 50px;
 }
 
-/* Фото с градиентом */
+/* ===== PHOTO ===== */
 .photo-wrapper {
   position: relative;
   width: 100%;
@@ -30,24 +32,24 @@ body {
 .profile-img {
   width: 100%;
   height: auto;
-  filter: brightness(70%) blur(0px); /* приглушаем яркость и слегка размываем */
+  filter: brightness(85%);
 }
 
 .photo-gradient {
   position: absolute;
   bottom: 0;
   width: 100%;
-  height: 60%; /* поднимаем градиент выше */
+  height: 70%;
   background: linear-gradient(
     to bottom,
-    rgba(255, 228, 196, 0) 0%,
-    /* прозрачная верхняя часть */ rgba(255, 228, 196, 0.7) 60%,
-    /* плавное затемнение к бежевому */ rgba(255, 228, 196, 1) 100%
-      /* полностью сливается с фоном */
+    rgba(238, 236, 232, 0) 0%,
+    rgba(238, 236, 232, 0.6) 55%,
+    rgba(238, 236, 232, 1) 100%
   );
-  pointer-events: none; /* градиент не мешает кликам по фото */
+  pointer-events: none;
 }
 
+/* ===== HEADER ===== */
 .header-text {
   text-align: center;
   padding: 20px 0;
@@ -57,87 +59,66 @@ body {
   font-size: 1.2rem;
   letter-spacing: 2px;
   font-weight: 300;
-  color: #3e342b; /* заголовок чуть темнее */
+  color: #2f2f2f;
 }
 
 .specialty {
-  color: #7a6b5f; /* серо-коричневый подзаголовок */
+  color: #7b7b7b;
   font-size: 0.9rem;
   margin-top: 5px;
 }
 
-/* Прайс-лист */
+/* ===== SECTIONS ===== */
 .price-section {
   padding: 0 20px;
 }
 
 h2 {
   text-align: center;
-  letter-spacing: 4px;
-  font-size: 1rem;
+  letter-spacing: 3px;
+  font-size: 0.9rem;
   margin: 30px 0;
-  border-bottom: 1px solid rgba(74, 63, 53, 0.3);
   padding-bottom: 15px;
-  color: #4a3f35;
+  color: #3f3f3f;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.15);
 }
 
+/* ===== LOCATION TABS ===== */
 .location-tabs {
   display: flex;
   justify-content: center;
   gap: 1rem;
-  margin-bottom: 3rem;
-  padding: 0.5rem;
-  background: #f5e6d1; /* светлый бежевый фон */
+  margin: 2.5rem auto;
+  padding: 0.4rem;
+  background: #dedcd8;
   border-radius: 50px;
   width: fit-content;
-  margin-left: auto;
-  margin-right: auto;
-  border: 1px solid #e1c9aa;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-  font-size: 0.8rem;
+  border: 1px solid rgba(0, 0, 0, 0.15);
 }
 
 .city-btn {
-  padding: 0.8rem 2rem;
-  font-size: 1rem;
-  font-weight: 600;
-  color: #8a7662; /* серо-коричневый для неактивных */
+  padding: 0.7rem 1.8rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #6f6f6f;
   background: transparent;
   border: none;
   border-radius: 50px;
   cursor: pointer;
-  transition: all 0.3s ease;
-  position: relative;
-  overflow: hidden;
+  transition: all 0.4s ease;
 }
 
 .city-btn:hover {
-  color: #fff;
-  background: rgba(62, 52, 43, 0.15);
+  color: #2f2f2f;
+  background: rgba(0, 0, 0, 0.05);
 }
 
 .city-btn.active {
   color: #fff;
-  background: #8a7662; /* тёплый серо-коричневый */
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  background: #8e8e8e;
 }
 
-.city-btn.active::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(
-    135deg,
-    rgba(255, 255, 255, 0.1) 0%,
-    rgba(255, 255, 255, 0) 100%
-  );
-  border-radius: 50px;
-}
-
-/* Разделы услуг */
+/* ===== SERVICES ===== */
 .services-wrapper {
   display: flex;
   flex-direction: column;
@@ -154,34 +135,30 @@ h2 {
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 2px;
-  background: rgba(74, 63, 53, 0.3);
+  height: 1px;
+  background: rgba(0, 0, 0, 0.15);
 }
 
-/* Контейнер раздела: название + услуги */
 .section-container {
   display: flex;
   gap: 20px;
 }
 
-/* Название раздела */
 .section-title {
+  min-width: 120px;
+  max-width: 120px;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-  font-size: 0.7rem;
-  letter-spacing: 0.05px;
-  color: #4a3f35;
+  font-size: 0.75rem;
   text-transform: uppercase;
-  line-height: 1.2;
-  min-width: 120px;
-  max-width: 120px;
-  word-wrap: break-word;
+  color: #5a5a5a;
   font-weight: 300;
+  line-height: 1.3;
 }
 
-/* Колонка с услугами */
+/* ===== PRICES ===== */
 .service-prices {
   flex: 1;
   display: flex;
@@ -193,85 +170,75 @@ h2 {
   display: grid;
   grid-template-columns: 1fr auto;
   padding: 10px 0;
-  border-bottom: 1px solid rgba(74, 63, 53, 0.3);
-}
-
-.price-row:last-child {
-  border-bottom: 1px solid rgba(74, 63, 53, 0.3);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.15);
 }
 
 .service-name {
-  color: #6b584a;
+  color: #6b6b6b;
   font-size: 0.8rem;
 }
 
 .service-cost {
-  color: #4a3f35;
-  font-weight: 500;
+  color: #3f3f3f;
   font-size: 0.8rem;
+  font-weight: 500;
 }
 
-/* Кнопки */
+/* ===== BUTTON ===== */
 .cta-button {
   display: block;
   margin: 40px 0;
   padding: 18px;
-  background: #d9c1a3;
-  border: none;
+  background: #d2d2d2;
   border-radius: 50px;
   text-align: center;
-  color: #4a3f35;
-  text-decoration: none;
-  font-size: 0.8rem;
+  color: #2f2f2f;
+  font-size: 0.75rem;
   letter-spacing: 2px;
   font-weight: 600;
   text-transform: uppercase;
+  text-decoration: none;
   transition: all 0.3s ease;
 }
 
 .cta-button:hover {
-  background: #cbb49b;
-  transform: scale(1.02);
+  background: #c4c4c4;
 }
 
-/* Аккордеон */
+/* ===== ACCORDION ===== */
 .accordion-item {
   margin: 40px 0;
-  border-top: 2px solid rgba(74, 63, 53, 0.3);
-  border-bottom: 2px solid rgba(74, 63, 53, 0.3);
+  border-top: 1px solid rgba(0, 0, 0, 0.15);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.15);
 }
 
 .accordion-header {
-  width: 100%;
   background: none;
   border: none;
-  color: #4a3f35;
+  width: 100%;
   padding: 25px 20px;
   display: grid;
   grid-template-columns: 1fr auto;
   align-items: center;
   cursor: pointer;
-  gap: 15px;
+  color: #3f3f3f;
 }
 
 .accordion-btn-circle {
-  width: 40px;
-  height: 40px;
-  background: #d9c1a3;
+  width: 38px;
+  height: 38px;
   border-radius: 50%;
+  background: #d2d2d2;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: all 0.3s ease;
+  transition: background 0.3s ease;
 }
 
 .plus-icon {
-  font-size: 1.8rem;
-  color: #4a3f35;
+  font-size: 1.6rem;
   font-weight: 300;
-  transition: transform 0.3s;
-  line-height: 1;
-  display: block;
+  transition: transform 0.3s ease;
 }
 
 .accordion-header.active .plus-icon {
@@ -279,73 +246,142 @@ h2 {
 }
 
 .accordion-header.active .accordion-btn-circle {
-  background: #cbb49b;
+  background: #c4c4c4;
 }
 
 .accordion-content {
   max-height: 0;
   overflow: hidden;
-  transition: max-height 0.5s;
-  background: transparent;
+  transition: max-height 0.6s ease;
 }
 
 .content-inner {
   padding: 20px;
   font-size: 0.85rem;
   line-height: 1.6;
-  color: #6b584a;
-}
-
-.content-inner ul {
-  margin: 15px 0;
-  list-style: none;
+  color: #6b6b6b;
 }
 
 .content-inner li::before {
   content: "— ";
+  color: #3f3f3f;
+}
+
+/* ===== COURSE CARD CONTENT ===== */
+
+.course-card__body {
+  padding: 10px 0;
+}
+
+/* Заголовки */
+.course-card__body h4 {
+  margin: 36px 0 18px;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #2f2f2f;
+}
+
+.course-card__body h5 {
+  margin: 26px 0 12px;
+  font-size: 0.9rem;
+  font-weight: 500;
   color: #4a3f35;
 }
 
-.price-bold {
-  font-weight: bold;
-  color: #4a3f35;
-  margin-top: 10px;
-  font-size: 1rem;
+/* Основные списки */
+.course-card__body ul {
+  margin: 0 0 26px;
+  padding-left: 22px;
 }
 
+/* Пункты списка */
+.course-card__body li {
+  margin-bottom: 10px;
+  line-height: 1.65;
+  font-size: 0.85rem;
+  color: #6b6b6b;
+}
+
+/* Вложенные списки */
+.course-card__body li > ul {
+  margin: 10px 0 14px;
+  padding-left: 18px;
+}
+
+/* Вложенные пункты */
+.course-card__body li > ul li {
+  margin-bottom: 6px;
+  font-size: 0.8rem;
+  color: #7b7b7b;
+}
+
+/* Курсив */
+.course-card__body em {
+  display: inline-block;
+  margin-top: 6px;
+  color: #8a8a8a;
+  font-style: italic;
+}
+/* Обёртка для центрирования */
+.whatsapp-wrapper {
+  text-align: center;
+  margin: 30px 0; /* отступ сверху и снизу */
+}
+
+/* Кнопка WhatsApp */
+.whatsapp-btn {
+  display: inline-block;
+  padding: 16px 36px; /* увеличили размер */
+  background-color: #7f7d78; /* тёмно-серо-коричневый фон */
+  color: #fff; /* белый текст */
+  font-size: 1.2rem; /* чуть крупнее */
+  font-weight: 700;
+  text-decoration: none;
+  border-radius: 50px;
+  transition: all 0.3s ease;
+  letter-spacing: 1px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* чуть больше тень для объёма */
+}
+
+.whatsapp-btn:hover {
+  background-color: #6c6a63; /* тёмнее при наведении */
+  transform: scale(1.08); /* чуть больше эффект масштабирования */
+}
+/* ===== FOOTER ===== */
 .footer {
   text-align: center;
   margin-top: 50px;
-  font-size: 0.8rem;
-  color: #7a6b5f;
-  line-height: 2;
+  font-size: 0.75rem;
+  color: #7b7b7b;
 }
 
-/* Анимации */
+/* ===== ANIMATIONS ===== */
 @keyframes slideFromLeft {
   from {
     opacity: 0;
-    transform: translateX(-50px);
+    transform: translateX(-30px);
   }
   to {
     opacity: 1;
     transform: translateX(0);
   }
 }
+
 @keyframes slideFromRight {
   from {
     opacity: 0;
-    transform: translateX(50px);
+    transform: translateX(30px);
   }
   to {
     opacity: 1;
     transform: translateX(0);
   }
 }
+
 @keyframes slideFromTop {
   from {
     opacity: 0;
-    transform: translateY(-30px);
+    transform: translateY(-20px);
   }
   to {
     opacity: 1;
@@ -353,25 +389,16 @@ h2 {
   }
 }
 
-.header-text h1,
-.header-text .specialty {
-  opacity: 0;
-}
-
 .animate-top {
-  animation: slideFromTop 0.8s ease-out forwards;
-}
-
-.header-text .specialty.animate-top {
-  animation-delay: 0.15s;
+  animation: slideFromTop 1.1s ease forwards;
 }
 
 .animate-left {
-  animation: slideFromLeft 1s ease-out forwards;
+  animation: slideFromLeft 1.2s ease forwards;
 }
 
 .animate-right {
-  animation: slideFromRight 1s ease-out forwards;
+  animation: slideFromRight 1.2s ease forwards;
 }
 </style>
 <!doctype html>
@@ -390,8 +417,7 @@ h2 {
           <div class="photo-gradient"></div>
         </div>
         <div class="header-text">
-          <h1>МУСЯ БАГОМЕДОВА —</h1>
-          <p class="specialty">врач, косметолог.</p>
+          <h1>ГЕНЖЕХАНОВА САЯ</h1>
         </div>
       </header>
 
@@ -411,79 +437,118 @@ h2 {
 <!-- Прайс для Москвы -->
 <div class="city-prices" data-city="moscow">
   <!-- Эстет косметология -->
-  <div class="service-section">
-    <div class="section-container">
-      <h3 class="section-title">Эстет косметология</h3>
-      <div class="service-prices">
-        <div class="price-row">
-          <span class="service-name">Атравматическая чистка лица (уходовая программа на косметике angiopharm без использования инструмента)</span>
-          <span class="service-cost">3.000₽</span>
-        </div>
-        <div class="price-row">
-          <span class="service-name">Комбинированная чистка лица (чистка на косметике angiopharm+genosys)</span>
-          <span class="service-cost">5.000₽</span>
-        </div>
-        <div class="price-row">
-          <span class="service-name">Комбинированная чистка лица в комплексе с пилингом (чистка на косметике angiopharm+genosys+пилинг по типу кожи)</span>
-          <span class="service-cost">8.000₽</span>
-        </div>
-        <div class="price-row">
-          <span class="service-name">Жидкий лазер — С чисткой</span>
-          <span class="service-cost">9.000₽</span>
-        </div>
-        <div class="price-row">
-          <span class="service-name">Жидкий лазер — Без чистки</span>
-          <span class="service-cost">7.000₽</span>
-        </div>
-        <div class="price-row">
-          <span class="service-name">Миндальный пилинг</span>
-          <span class="service-cost">4.000₽</span>
-        </div>
-        <div class="price-row">
-          <span class="service-name">Biorepeel</span>
-          <span class="service-cost">5.000₽</span>
-        </div>
-        <div class="price-row">
-          <span class="service-name">Желтый пилинг</span>
-          <span class="service-cost">7.000₽</span>
-        </div>
-        <div class="price-row">
-          <span class="service-name">PRX T33</span>
-          <span class="service-cost">6.000₽</span>
-        </div>
+<!-- Эстет косметология -->
+<div class="service-section">
+  <div class="section-container">
+    <h3 class="section-title">Эстет косметология</h3>
+    <div class="service-prices">
+      <div class="price-row">
+        <span class="service-name">Атравматическая чистка лица (уходовая программа на косметике angiopharm без использования инструмента)</span>
+        <span class="service-cost">3.000₽</span>
+      </div>
+      <div class="price-row">
+        <span class="service-name">Комбинированная чистка лица (чистка на косметике angiopharm+genosys)</span>
+        <span class="service-cost">4.500₽</span>
+      </div>
+      <div class="price-row">
+        <span class="service-name">Комбинированная чистка лица в комплексе с пилингом (angiopharm + genosys)</span>
+        <span class="service-cost">6.000₽</span>
+      </div>
+      <div class="price-row">
+        <span class="service-name">Жидкий лазер — с чисткой</span>
+        <span class="service-cost">7.000₽</span>
+      </div>
+      <div class="price-row">
+        <span class="service-name">Жидкий лазер — без чистки</span>
+        <span class="service-cost">5.000₽</span>
       </div>
     </div>
   </div>
+</div>
 
+<!-- Пилинг -->
+<div class="service-section">
+  <div class="section-container">
+    <h3 class="section-title">Пилинг</h3>
+    <div class="service-prices">
+      <div class="price-row">
+        <span class="service-name">Миндальный пилинг</span>
+        <span class="service-cost">3.000₽</span>
+      </div>
+      <div class="price-row">
+        <span class="service-name">Biorepeel</span>
+        <span class="service-cost">4.000₽</span>
+      </div>
+      <div class="price-row">
+        <span class="service-name">Жёлтый пилинг</span>
+        <span class="service-cost">5.000₽</span>
+      </div>
+      <div class="price-row">
+        <span class="service-name">PRX T33</span>
+        <span class="service-cost">5.000₽</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Коррекция подбородка / Яблочки молодости / Углы нижней челюсти / Скулы -->
+<div class="service-section">
+  <div class="section-container">
+    <h3 class="section-title">Коррекция подбородка / Яблочки / Углы нижней челюсти / Скулы</h3>
+    <div class="service-prices">
+      <!-- Stylage 1ml -->
+      <div class="price-row">
+        <span class="service-name">Stylage 1ml</span>
+        <span class="service-cost">20.000₽</span>
+      </div>
+      <!-- Stylage 0.5ml -->
+      <div class="price-row">
+        <span class="service-name">Stylage 0.5ml</span>
+        <span class="service-cost">15.000₽</span>
+      </div>
+      <!-- Коррекция 2ml -->
+      <div class="price-row">
+        <span class="service-name">Коррекция 2ml</span>
+        <span class="service-cost">16.000₽</span>
+      </div>
+    </div>
+  </div>
+</div>
   <!-- Контурная косметология -->
-  <div class="service-section">
-    <div class="section-container">
-      <h3 class="section-title">Контурная косметология</h3>
-      <div class="service-prices">
-        <div class="price-row"><span class="service-name">Revolax deep 0,5ml</span><span class="service-cost">12.000₽</span></div>
-        <div class="price-row"><span class="service-name">Revolax 1ml</span><span class="service-cost">14.000₽</span></div>
-        <div class="price-row"><span class="service-name">Dermalax deep 0,5ml</span><span class="service-cost">12.000₽</span></div>
-        <div class="price-row"><span class="service-name">Dermalax 1ml</span><span class="service-cost">14.000₽</span></div>
-        <div class="price-row"><span class="service-name">Stylage M 0,5ml</span><span class="service-cost">13.000₽</span></div>
-        <div class="price-row"><span class="service-name">Stylage M 1ml</span><span class="service-cost">17.000₽</span></div>
-        <div class="price-row"><span class="service-name">Juvederm 1ml</span><span class="service-cost">20.000₽</span></div>
-        <div class="price-row"><span class="service-name">Belotero lips 1ml</span><span class="service-cost">20.000₽</span></div>
-        <div class="price-row"><span class="service-name">Выведение филлера — Локальное (над губой/слизистая)</span><span class="service-cost">3.000₽</span></div>
-        <div class="price-row"><span class="service-name">Выведение филлера — Полное</span><span class="service-cost">5.000₽</span></div>
-        <div class="price-row"><span class="service-name">Коррекция подбородка/Яблочки молодости/Углы нижней челюсти/Скулы — Revolax/Dermalax 1ml</span><span class="service-cost">13.000₽</span></div>
-        <div class="price-row"><span class="service-name">Коррекция подбородка — 2ml</span><span class="service-cost">17.000₽</span></div>
-        <div class="price-row"><span class="service-name">Stylage 1ml</span><span class="service-cost">16.000₽</span></div>
-        <div class="price-row"><span class="service-name">Stylage 2ml</span><span class="service-cost">24.000₽</span></div>
-        <div class="price-row"><span class="service-name">Заполнение носогубных складок — Revolax 1ml</span><span class="service-cost">10.000₽</span></div>
-        <div class="price-row"><span class="service-name">Stylage 1ml</span><span class="service-cost">15.000₽</span></div>
-        <div class="price-row"><span class="service-name">Neotiva 1ml</span><span class="service-cost">14.000₽</span></div>
-        <div class="price-row"><span class="service-name">Belotero 1ml</span><span class="service-cost">16.000₽</span></div>
-        <div class="price-row"><span class="service-name">Заполнение носослезной борозды — Teosyal redensity</span><span class="service-cost">20.000₽</span></div>
-        <div class="price-row"><span class="service-name">Stylage S</span><span class="service-cost">16.000₽</span></div>
-      </div>
+<div class="service-section">
+  <div class="section-container">
+    <h3 class="section-title">Контурная косметология</h3>
+    <div class="service-prices">
+      <div class="price-row"><span class="service-name">Stylage 1ml</span><span class="service-cost">14.000₽</span></div>
+      <div class="price-row"><span class="service-name">Stylage 2ml</span><span class="service-cost">22.000₽</span></div>
+      <div class="price-row"><span class="service-name">Заполнение носогубных складок — Revolax 1ml</span><span class="service-cost">8.000₽</span></div>
+      <div class="price-row"><span class="service-name">Stylage 1ml</span><span class="service-cost">12.000₽</span></div>
+      <div class="price-row"><span class="service-name">Neotiva 1ml</span><span class="service-cost">12.000₽</span></div>
+      <div class="price-row"><span class="service-name">Belotero 1ml</span><span class="service-cost">15.000₽</span></div>
+      <div class="price-row"><span class="service-name">Заполнение носослезной борозды — Teosyal redensity</span><span class="service-cost">18.000₽</span></div>
+      <div class="price-row"><span class="service-name">Stylage S</span><span class="service-cost">14.000₽</span></div>
     </div>
   </div>
+</div>
 
+<!-- Увеличение губ -->
+<div class="service-section">
+  <div class="section-container">
+    <h3 class="section-title">Увеличение губ</h3>
+    <div class="service-prices">
+      <div class="price-row"><span class="service-name">Revolax deep 0,5ml</span><span class="service-cost">10.000₽</span></div>
+      <div class="price-row"><span class="service-name">Revolax 1ml</span><span class="service-cost">12.000₽</span></div>
+      <div class="price-row"><span class="service-name">Dermalax deep 0,5ml</span><span class="service-cost">10.000₽</span></div>
+      <div class="price-row"><span class="service-name">Dermalax 1ml</span><span class="service-cost">12.000₽</span></div>
+      <div class="price-row"><span class="service-name">Stylage M 0,5ml</span><span class="service-cost">12.000₽</span></div>
+      <div class="price-row"><span class="service-name">Stylage M 1ml</span><span class="service-cost">15.000₽</span></div>
+      <div class="price-row"><span class="service-name">Juvederm 1ml</span><span class="service-cost">19.000₽</span></div>
+      <div class="price-row"><span class="service-name">Belotero lips 1ml</span><span class="service-cost">19.000₽</span></div>
+      <div class="price-row"><span class="service-name">Выведение филлера — Локальное (над губой/слизистая)</span><span class="service-cost">3.000₽</span></div>
+      <div class="price-row"><span class="service-name">Выведение филлера — Полное</span><span class="service-cost">5.000₽</span></div>
+    </div>
+  </div>
+</div>
   <!-- Ботулинотерапия -->
   <div class="service-section">
     <div class="section-container">
@@ -578,78 +643,97 @@ h2 {
 <!-- Прайс для Махачкалы -->
 <div class="city-prices" data-city="mahachkala" style="display:none;">
   <!-- Эстет косметология -->
-  <div class="service-section">
-    <div class="section-container">
-      <h3 class="section-title">Эстет косметология</h3>
-      <div class="service-prices">
-        <div class="price-row">
-          <span class="service-name">Атравматическая чистка лица (уходовая программа на косметике angiopharm без использования инструмента)</span>
-          <span class="service-cost">3.000₽</span>
-        </div>
-        <div class="price-row">
-          <span class="service-name">Комбинированная чистка лица (чистка на косметике angiopharm+genosys)</span>
-          <span class="service-cost">4.500₽</span>
-        </div>
-        <div class="price-row">
-          <span class="service-name">Комбинированная чистка лица в комплексе с пилингом (чистка на косметике angiopharm+genosys+пилинг по типу кожи)</span>
-          <span class="service-cost">6.000₽</span>
-        </div>
-        <div class="price-row">
-          <span class="service-name">Жидкий лазер — С чисткой</span>
-          <span class="service-cost">7.000₽</span>
-        </div>
-        <div class="price-row">
-          <span class="service-name">Жидкий лазер — Без чистки</span>
-          <span class="service-cost">5.000₽</span>
-        </div>
-        <div class="price-row">
-          <span class="service-name">Миндальный пилинг</span>
-          <span class="service-cost">3.000₽</span>
-        </div>
-        <div class="price-row">
-          <span class="service-name">Biorepeel</span>
-          <span class="service-cost">4.000₽</span>
-        </div>
-        <div class="price-row">
-          <span class="service-name">Желтый пилинг</span>
-          <span class="service-cost">5.000₽</span>
-        </div>
-        <div class="price-row">
-          <span class="service-name">PRX T33</span>
-          <span class="service-cost">5.000₽</span>
-        </div>
+  <!-- Эстет косметология -->
+<!-- Эстет косметология -->
+<div class="service-section">
+  <div class="section-container">
+    <h3 class="section-title">Эстет косметология</h3>
+    <div class="service-prices">
+      <div class="price-row">
+        <span class="service-name">Атравматическая чистка лица (уходовая программа на косметике angiopharm без использования инструмента)</span>
+        <span class="service-cost">3.000₽</span>
+      </div>
+      <div class="price-row">
+        <span class="service-name">Комбинированная чистка лица (чистка на косметике angiopharm+genosys)</span>
+        <span class="service-cost">4.500₽</span>
+      </div>
+      <div class="price-row">
+        <span class="service-name">Комбинированная чистка лица в комплексе с пилингом (angiopharm + genosys)</span>
+        <span class="service-cost">6.000₽</span>
+      </div>
+      <div class="price-row">
+        <span class="service-name">Жидкий лазер — с чисткой</span>
+        <span class="service-cost">7.000₽</span>
+      </div>
+      <div class="price-row">
+        <span class="service-name">Жидкий лазер — без чистки</span>
+        <span class="service-cost">5.000₽</span>
       </div>
     </div>
   </div>
+</div>
 
-  <!-- Контурная косметология -->
-  <div class="service-section">
-    <div class="section-container">
-      <h3 class="section-title">Контурная косметология</h3>
-      <div class="service-prices">
-        <div class="price-row"><span class="service-name">Revolax deep 0,5ml</span><span class="service-cost">10.000₽</span></div>
-        <div class="price-row"><span class="service-name">Revolax 1ml</span><span class="service-cost">12.000₽</span></div>
-        <div class="price-row"><span class="service-name">Dermalax deep 0,5ml</span><span class="service-cost">10.000₽</span></div>
-        <div class="price-row"><span class="service-name">Dermalax 1ml</span><span class="service-cost">12.000₽</span></div>
-        <div class="price-row"><span class="service-name">Stylage M 0,5ml</span><span class="service-cost">12.000₽</span></div>
-        <div class="price-row"><span class="service-name">Stylage M 1ml</span><span class="service-cost">15.000₽</span></div>
-        <div class="price-row"><span class="service-name">Juvederm 1ml</span><span class="service-cost">19.000₽</span></div>
-        <div class="price-row"><span class="service-name">Belotero lips 1ml</span><span class="service-cost">19.000₽</span></div>
-        <div class="price-row"><span class="service-name">Выведение филлера — Локальное (над губой/слизистая)</span><span class="service-cost">3.000₽</span></div>
-        <div class="price-row"><span class="service-name">Выведение филлера — Полное</span><span class="service-cost">5.000₽</span></div>
-        <div class="price-row"><span class="service-name">Коррекция подбородка/Яблочки молодости/Углы нижней челюсти/Скулы — Revolax/Dermalax 1ml</span><span class="service-cost">10.000₽</span></div>
-        <div class="price-row"><span class="service-name">Коррекция 2ml</span><span class="service-cost">16.000₽</span></div>
-        <div class="price-row"><span class="service-name">Stylage 1ml</span><span class="service-cost">14.000₽</span></div>
-        <div class="price-row"><span class="service-name">Stylage 2ml</span><span class="service-cost">22.000₽</span></div>
-        <div class="price-row"><span class="service-name">Заполнение носогубных складок — Revolax 1ml</span><span class="service-cost">8.000₽</span></div>
-        <div class="price-row"><span class="service-name">Stylage 1ml</span><span class="service-cost">12.000₽</span></div>
-        <div class="price-row"><span class="service-name">Neotiva 1ml</span><span class="service-cost">12.000₽</span></div>
-        <div class="price-row"><span class="service-name">Belotero 1ml</span><span class="service-cost">15.000₽</span></div>
-        <div class="price-row"><span class="service-name">Заполнение носослезной борозды — Teosyal redensity</span><span class="service-cost">18.000₽</span></div>
-        <div class="price-row"><span class="service-name">Stylage S</span><span class="service-cost">14.000₽</span></div>
+<!-- Пилинг -->
+<div class="service-section">
+  <div class="section-container">
+    <h3 class="section-title">Пилинг</h3>
+    <div class="service-prices">
+      <div class="price-row">
+        <span class="service-name">Миндальный пилинг</span>
+        <span class="service-cost">3.000₽</span>
+      </div>
+      <div class="price-row">
+        <span class="service-name">Biorepeel</span>
+        <span class="service-cost">4.000₽</span>
+      </div>
+      <div class="price-row">
+        <span class="service-name">Жёлтый пилинг</span>
+        <span class="service-cost">5.000₽</span>
+      </div>
+      <div class="price-row">
+        <span class="service-name">PRX T33</span>
+        <span class="service-cost">5.000₽</span>
       </div>
     </div>
   </div>
+</div>
+  <!-- Контурная косметология -->
+<!-- Контурная косметология -->
+<div class="service-section">
+  <div class="section-container">
+    <h3 class="section-title">Контурная косметология</h3>
+    <div class="service-prices">
+      <div class="price-row"><span class="service-name">Коррекция 2ml</span><span class="service-cost">16.000₽</span></div>
+      <div class="price-row"><span class="service-name">Stylage 1ml</span><span class="service-cost">14.000₽</span></div>
+      <div class="price-row"><span class="service-name">Stylage 2ml</span><span class="service-cost">22.000₽</span></div>
+      <div class="price-row"><span class="service-name">Заполнение носогубных складок — Revolax 1ml</span><span class="service-cost">8.000₽</span></div>
+      <div class="price-row"><span class="service-name">Stylage 1ml</span><span class="service-cost">12.000₽</span></div>
+      <div class="price-row"><span class="service-name">Neotiva 1ml</span><span class="service-cost">12.000₽</span></div>
+      <div class="price-row"><span class="service-name">Belotero 1ml</span><span class="service-cost">15.000₽</span></div>
+      <div class="price-row"><span class="service-name">Заполнение носослезной борозды — Teosyal redensity</span><span class="service-cost">18.000₽</span></div>
+      <div class="price-row"><span class="service-name">Stylage S</span><span class="service-cost">14.000₽</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- Увеличение губ -->
+<div class="service-section">
+  <div class="section-container">
+    <h3 class="section-title">Увеличение губ</h3>
+    <div class="service-prices">
+      <div class="price-row"><span class="service-name">Revolax deep 0,5ml</span><span class="service-cost">10.000₽</span></div>
+      <div class="price-row"><span class="service-name">Revolax 1ml</span><span class="service-cost">12.000₽</span></div>
+      <div class="price-row"><span class="service-name">Dermalax deep 0,5ml</span><span class="service-cost">10.000₽</span></div>
+      <div class="price-row"><span class="service-name">Dermalax 1ml</span><span class="service-cost">12.000₽</span></div>
+      <div class="price-row"><span class="service-name">Stylage M 0,5ml</span><span class="service-cost">12.000₽</span></div>
+      <div class="price-row"><span class="service-name">Stylage M 1ml</span><span class="service-cost">15.000₽</span></div>
+      <div class="price-row"><span class="service-name">Juvederm 1ml</span><span class="service-cost">19.000₽</span></div>
+      <div class="price-row"><span class="service-name">Belotero lips 1ml</span><span class="service-cost">19.000₽</span></div>
+      <div class="price-row"><span class="service-name">Выведение филлера — Локальное (над губой/слизистая)</span><span class="service-cost">3.000₽</span></div>
+      <div class="price-row"><span class="service-name">Выведение филлера — Полное</span><span class="service-cost">5.000₽</span></div>
+    </div>
+  </div>
+</div>
 
   <!-- Ботулинотерапия -->
   <div class="service-section">
@@ -743,10 +827,7 @@ h2 {
   </div>
 </div>
 
-    <footer class="footer">
-      <p><strong>Махачкала</strong> — Ушакова 13</p>
-      <p><strong>Москва</strong> — Садовническая 5</p>
-    </footer>
+    
   </div>
 
   <script>
@@ -771,7 +852,7 @@ h2 {
 
 <!-- Кнопка WhatsApp -->
 <div class="whatsapp-wrapper">
-  <a href="https://wa.me/79000000000" target="_blank" class="whatsapp-btn">
+  <a href="https://wa.me/79898721217" target="_blank" class="whatsapp-btn">
     Записаться
   </a>
 </div>
@@ -888,7 +969,10 @@ h2 {
   </header>
   <div class="course-card__content">
     <div class="course-card__body">
-      <p><strong>Программа обучения:</strong></p>
+
+      <h4>В программу обучения входит:</h4>
+
+      <h5>Теоретический блок:</h5>
       <ul>
         <li>Оснащение косметологического кабинета в соответствии с профессиональными и санитарными нормами</li>
         <li>Асептика и антисептика</li>
@@ -926,7 +1010,7 @@ h2 {
         <li>Контакты проверенных поставщиков профессиональной косметики и расходных материалов</li>
       </ul>
 
-      <p><strong>Бонус:</strong></p>
+      <h5>Бонус:</h5>
       <ul>
         <li>Блок по продвижению в Instagram для косметологов:
           <ul>
@@ -937,15 +1021,21 @@ h2 {
         </li>
       </ul>
 
-      <p>Обучение включает глубокую теорию и практическую насыщенную отработку на моделях:</p>
+      <h5>Практическая часть:</h5>
       <ul>
+        <li>Глубокая теория и практическая отработка на моделях</li>
         <li>Моделей предоставляю</li>
-        <li>По окончанию обучения выдается сертификат</li>
-        <li>Продолжительность обучения: 5–7 дней</li>
-        <li>Поддерживаю связь после обучения</li>
+        <li>Индивидуальный контроль и корректировка техники</li>
       </ul>
 
-      <p><em>В Москве нет обучения по эстет-косметологии</em></p>
+      <h4>Формат обучения:</h4>
+      <ul>
+        <li>По окончании обучения выдается сертификат</li>
+        <li>Продолжительность обучения: 5–7 дней</li>
+        <li>Поддерживаю связь после обучения</li>
+        <li><em>В Москве нет обучения по эстет-косметологии</em></li>
+      </ul>
+
     </div>
   </div>
 </article>
@@ -1450,10 +1540,7 @@ document.addEventListener('DOMContentLoaded', function() {
   }, 100);
 });
 </script>
-      <footer class="footer">
-        <p><strong>Махачкала</strong> — Ушакова 13</p>
-        <p><strong>Москва</strong> — Садовническая 5</p>
-      </footer>
+      
     </div>
 
     <!-- JS для анимации по прокрутке -->
