@@ -1,14 +1,12 @@
-/* ===== RESET ===== */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* ===== BASE ===== */
 body {
-  background: #eeece8; /* серо-бежевый, больше серого */
-  color: #3f3f3f; /* графитовый текст */
+  background: #eeece8;
+  color: #3f3f3f;
   font-family: "Inter", sans-serif;
   display: flex;
   justify-content: center;
@@ -21,7 +19,6 @@ body {
   padding-bottom: 50px;
 }
 
-/* ===== PHOTO ===== */
 .photo-wrapper {
   position: relative;
   width: 100%;
@@ -48,7 +45,6 @@ body {
   pointer-events: none;
 }
 
-/* ===== HEADER ===== */
 .header-text {
   text-align: center;
   padding: 20px 0;
@@ -67,7 +63,6 @@ body {
   margin-top: 5px;
 }
 
-/* ===== SECTIONS ===== */
 .price-section {
   padding: 0 20px;
 }
@@ -82,7 +77,6 @@ h2 {
   border-bottom: 1px solid rgba(0, 0, 0, 0.15);
 }
 
-/* ===== LOCATION TABS ===== */
 .location-tabs {
   display: flex;
   justify-content: center;
@@ -117,7 +111,6 @@ h2 {
   background: #8e8e8e;
 }
 
-/* ===== SERVICES ===== */
 .services-wrapper {
   display: flex;
   flex-direction: column;
@@ -157,7 +150,6 @@ h2 {
   line-height: 1.3;
 }
 
-/* ===== PRICES ===== */
 .service-prices {
   flex: 1;
   display: flex;
@@ -179,11 +171,10 @@ h2 {
 
 .service-cost {
   color: #3f3f3f;
-  font-size: 0.8rem;
+  font-size: 0.7rem;
   font-weight: 500;
 }
 
-/* ===== BUTTON ===== */
 .cta-button {
   display: block;
   margin: 40px 0;
@@ -204,7 +195,6 @@ h2 {
   background: #c4c4c4;
 }
 
-/* ===== ACCORDION ===== */
 .accordion-item {
   margin: 40px 0;
   border-top: 1px solid rgba(0, 0, 0, 0.15);
@@ -266,32 +256,30 @@ h2 {
   color: #3f3f3f;
 }
 
-/* Обёртка для центрирования */
 .whatsapp-wrapper {
   text-align: center;
-  margin: 30px 0; /* отступ сверху и снизу */
+  margin: 30px 0;
 }
 
-/* Кнопка WhatsApp */
 .whatsapp-btn {
   display: inline-block;
-  padding: 16px 36px; /* увеличили размер */
-  background-color: #7f7d78; /* тёмно-серо-коричневый фон */
-  color: #fff; /* белый текст */
-  font-size: 1.2rem; /* чуть крупнее */
+  padding: 16px 36px;
+  background-color: #7f7d78;
+  color: #fff;
+  font-size: 1.2rem;
   font-weight: 700;
   text-decoration: none;
   border-radius: 50px;
   transition: all 0.3s ease;
   letter-spacing: 1px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* чуть больше тень для объёма */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
 .whatsapp-btn:hover {
-  background-color: #6c6a63; /* тёмнее при наведении */
-  transform: scale(1.08); /* чуть больше эффект масштабирования */
+  background-color: #6c6a63;
+  transform: scale(1.08);
 }
-/* ===== FOOTER ===== */
+
 .footer {
   text-align: center;
   margin-top: 50px;
@@ -299,7 +287,6 @@ h2 {
   color: #7b7b7b;
 }
 
-/* ===== ANIMATIONS ===== */
 @keyframes slideFromLeft {
   from {
     opacity: 0;
