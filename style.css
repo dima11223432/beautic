@@ -117,7 +117,7 @@ h2 {
 }
 
 .service-section {
-  padding: 25px 0;
+  padding: 16px 0;
   position: relative;
 }
 
@@ -133,7 +133,7 @@ h2 {
 
 .section-container {
   display: flex;
-  gap: 20px;
+  gap: 14px;
 }
 
 .section-title {
@@ -160,7 +160,7 @@ h2 {
 .price-row {
   display: grid;
   grid-template-columns: 1fr auto;
-  padding: 10px 0;
+  padding: 6px 0;
   border-bottom: 1px solid rgba(0, 0, 0, 0.15);
 }
 
@@ -171,7 +171,7 @@ h2 {
 
 .service-cost {
   color: #3f3f3f;
-  font-size: 0.1rem;
+  font-size: 0.7rem;
   font-weight: 500;
 }
 
